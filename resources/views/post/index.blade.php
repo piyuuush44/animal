@@ -49,11 +49,34 @@
 <header class="s-header header">
 
     <div class="header__logo">
-        <a class="logo" href="/blog" style="color: white">
+        <a class="logo" href="/blog" style="color: rgba(0, 0, 0, 0.6)">
             Piyush
         </a>
     </div> <!-- end header__logo -->
 
+    <nav class="header__nav-wrap">
+
+
+
+        <ul class="header__nav">
+            <li class="has-children">
+                <a href="#0" title="">Auth</a>
+                <ul class="sub-menu">
+                    @auth
+                        <li><a href="{{ url('/blog') }}">Home</a></li>
+
+                    @else
+                        <li><a href="{{ route('login') }}">Login</a></li>
+
+                        @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endif
+                    @endauth
+                </ul>
+            </li>
+        </ul> <!-- end header__nav -->
+
+    </nav>
 
 </header> <!-- s-header -->
 

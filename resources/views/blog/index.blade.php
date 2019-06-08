@@ -1,6 +1,4 @@
-
-
-        <!DOCTYPE html>
+<!DOCTYPE html>
 <html class="no-js" lang="en">
 <head>
 
@@ -46,14 +44,35 @@
 <header class="s-header header">
 
     <div class="header__logo">
-        <a class="logo" href="" style="color: white">
-          Piyush
+        <a class="logo" href="" style="color: rgba(0, 0, 0, 0.6)">
+            Piyush
         </a>
     </div> <!-- end header__logo -->
+    <nav class="header__nav-wrap">
 
+        <h2 class="header__nav-heading h6">Navigate to</h2>
+
+        <ul class="header__nav">
+            <li class="has-children">
+                <a href="#0" title="">Auth</a>
+                <ul class="sub-menu">
+                    @auth
+
+                    @else
+                        <li><a href="{{ route('login') }}">Login</a></li>
+
+                        @if (Route::has('register'))
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @endif
+                    @endauth
+                </ul>
+            </li>
+        </ul> <!-- end header__nav -->
+
+
+    </nav>
 
 </header> <!-- s-header -->
-
 
 
 <!-- featured
@@ -132,7 +151,6 @@
     </div> <!-- end entries-wrap -->
 
 </section> <!-- end s-content -->
-
 
 
 <!-- s-footer

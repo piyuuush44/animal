@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/blog', 'WinkController@index');
 
 Route::get('blog/{slug}', 'WinkController@show');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
